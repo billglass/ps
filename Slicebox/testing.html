@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<link rel="stylesheet" type="text/css" href="ps.css">
+<script src="jquery-2.1.3.js"></script>
+<script type="text/javascript" src='ps.js'></script>
+<link rel="stylesheet" type="text/css" href="css/slicebox.css" />
+<link href='http://fonts.googleapis.com/css?family=Dosis' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src="/scripts/modernizr.custom.46884.js"></script>
+
+<title>Shyangden Phiroj</title>
+
+</head>
+
+<body>
+
+<div id='header'>
+  <nav>
+    <a href='#panelOne'>About</a>
+    <a href='#panelTwo'>Music</a>
+    <a href='#panelThree'>Contact</a>
+    <span id='location'></span>
+  </nav>
+</div>
+<div class='panelize'>
+  <section class='panel one' id='panelOne'>
+    <article>
+      <div class='container'>
+        <header>
+          <h1>Shyangden Phiroj</h1>
+          <p>Based in Queens, New York, Shyangden Phiroj is a world-renown guitarist. A founding member of one of Nepal’s most famous rock bands, 1974 AD, his playing style implements various genres, including Nepali folk, ragas, rock, funk, blues and jazz.</p>
+
+<ul id="sb-slider" class="sb-slider">
+
+  <li>
+    <a href="#" target="_blank">
+      <img src="images/psone.jpg" alt="image1"/>
+    </a>
+    <div class="sb-description">
+      <h3>Creative Lifesaver</h3>
+    </div>
+  </li>
+
+  <li>
+    <img src="images/pstwo.jpg" alt="image2"/>
+    <div class="sb-description">
+      <h3>...</h3>
+    </div>
+  </li>
+  
+</ul>
+        </header>
+      </div>
+    </article>
+  </section>
+  <section class='panel two' id='panelTwo'>
+    <article>
+      <div class='container'>
+        <header>
+          <h1>Panel Two</h1>
+        </header>
+        <div class='content'>
+            <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/214137704&amp;color=ff5500&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false"></iframe>
+        </div>
+
+        <div class='content'>
+          <iframe width="100%" height="300" scrolling="no" frameborder="no" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/200450413&amp;auto_play=false&amp;hide_related=false&amp;show_comments=true&amp;show_user=true&amp;show_reposts=false&amp;visual=true"></iframe>
+        </div>
+
+      </div>
+    </article>
+  </section>
+  <section class='panel three' id='panelThree'>
+    <article>
+      <div class='container'>
+        <header>
+          <h1>Panel Three</h1>
+        </header>
+        <div class='content'>
+          <p>I am the last of my species, and I know how that weighs on the heart so don't lie to me! I am the last of my species, and I know how that weighs on the heart so don't lie to me! It's art! A statement on modern society, 'Oh Ain't Modern Society Awful?'! Stop talking, brain thinking. Hush. I'm the Doctor, I'm worse than everyone's aunt. *catches himself* And that is not how I'm introducing myself. No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister.</p>
+          <p>Annihilate? No. No violence. I won't stand for it. Not now, not ever, do you understand me?! I'm the Doctor, the Oncoming Storm - and you basically meant beat them in a football match, didn't you? Did I mention we have comfy chairs? No, I'll fix it. I'm good at fixing rot. Call me the Rotmeister. No, I'm the Doctor. Don't call me the Rotmeister. You know how I sometimes have really brilliant ideas? *Insistently* Bow ties are cool! Come on Amy, I'm a normal bloke, tell me what normal blokes do!</p>
+        </div>
+      </div>
+    </article>
+  </section>
+</div>
+    <script type="text/javascript" src="Slicebox/js/jquery.slicebox.js"></script>
+    <script type="text/javascript">
+      $(function() {
+
+        var Page = (function() {
+
+          var $navArrows = $( '#nav-arrows' ).hide(),
+            $navDots = $( '#nav-dots' ).hide(),
+            $nav = $navDots.children( 'span' ),
+            $shadow = $( '#shadow' ).hide(),
+            slicebox = $( '#sb-slider' ).slicebox( {
+              onReady : function() {
+
+                $navArrows.show();
+                $navDots.show();
+                $shadow.show();
+
+              },
+              onBeforeChange : function( pos ) {
+
+                $nav.removeClass( 'nav-dot-current' );
+                $nav.eq( pos ).addClass( 'nav-dot-current' );
+
+              }
+            } ),
+            
+            init = function() {
+
+              initEvents();
+              
+            },
+            initEvents = function() {
+
+              // add navigation events
+              $navArrows.children( ':first' ).on( 'click', function() {
+
+                slicebox.next();
+                return false;
+
+              } );
+
+              $navArrows.children( ':last' ).on( 'click', function() {
+                
+                slicebox.previous();
+                return false;
+
+              } );
+
+              $nav.each( function( i ) {
+              
+                $( this ).on( 'click', function( event ) {
+                  
+                  var $dot = $( this );
+                  
+                  if( !slicebox.isActive() ) {
+
+                    $nav.removeClass( 'nav-dot-current' );
+                    $dot.addClass( 'nav-dot-current' );
+                  
+                  }
+                  
+                  slicebox.jump( i + 1 );
+                  return false;
+                
+                } );
+                
+              } );
+
+            };
+
+            return { init : init };
+
+        })();
+
+        Page.init();
+
+      });
+    </script>
+</body>
+</html>
