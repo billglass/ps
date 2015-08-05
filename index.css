@@ -21,7 +21,7 @@ body {
 
 .navname {
 	margin-top: 80px;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	color: #fff;
 	font-size: 4.5em;
 	text-align: center;
@@ -30,7 +30,7 @@ body {
 
 .name {
 	padding-top: 25px;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	color: #fff;
 	font-size: 4.5em;
 	text-align: center;
@@ -39,7 +39,7 @@ body {
 
 .music_title {
 	color: #fff;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	margin-top: 100px;
 	text-align: center;
 	padding-top: 40px;
@@ -78,7 +78,7 @@ body {
 
 .about_title {
 	color: #fff;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	margin-top: 50px;
 	text-align: center;
 	padding-top: 40px;
@@ -104,7 +104,7 @@ body {
 
 .contact_title {
 	color: #fff;
-	font-family: 'Poiret One', cursive;
+	font-family: 'Poiret One', sans-serif;
 	margin: 0 auto;
 	text-align: center;
 	padding-top: 50px;
